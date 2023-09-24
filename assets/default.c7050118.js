@@ -1,0 +1,1 @@
+import{_ as e,k as r,N as o,j as a}from"./entry.5bd579a4.js";const s={},n={class:"bg-gradient-to-r from-purple-600 to-pink-500 text-dark dark:text-light default-font"};function c(t,d){return a(),r("div",n,[o(t.$slots,"default")])}const f=e(s,[["render",c]]);export{f as default};
