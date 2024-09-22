@@ -19,17 +19,16 @@ module.exports = {
         top: '0px -10px 20px 0px rgba(0,0,0,0.2)'
       },
       backgroundColor: {
-        // Used for backgrounds (darker than secondary)
-        'primary-dark': '#1E2127',
-        'primary-light': '#FFFBFF',
-        // Used for surfaces like cards (lighter than primary)
-        'secondary-dark': '#282C34',
-        'secondary-light': '#F9F0FD'
+        'primary-dark': '#0D1117',
+        'primary-light': '#F5F5F5',
+        'secondary-dark': '#161B22',
+        'secondary-light': '#E8EAF6'
       },
       colors: {
-        // Mainly used for fonts
-        dark: '#1E2127',
-        light: '#FFFBFF'
+        dark: '#0D1117',
+        light: '#F5F5F5',
+        accent: '#7927b2',
+        'accent-secondary': '#FB3182'
       },
       // Custom animations
       keyframes: {

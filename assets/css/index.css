@@ -1,0 +1,26 @@
+/* Custom fonts */
+@font-face {
+  font-family: 'coolvetica';
+  src: url('~/assets/fonts/coolvetica.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VT323';
+  src: url('~/assets/fonts/VT323.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: 'coolvetica', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Remove some styles from svg icons */
+.nuxt-icon svg {
+  margin-bottom: 0 !important;
+  width: inherit !important;
+  height: inherit !important;
+}

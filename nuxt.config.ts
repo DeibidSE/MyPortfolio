@@ -44,8 +44,24 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia-plugin-persistedstate/nuxt',
     '@pinia/nuxt',
-    'nuxt-icons'
+    'nuxt-icons',
+    '@nuxtjs/i18n'
   ],
-  css: ['@/assets/css/tailwind.css'],
+  i18n: {
+    strategy: 'no_prefix',
+    defaultLocale: 'en',
+    locales: [
+      { code: 'es', name: 'Español', file: 'es.json' },
+      { code: 'en', name: 'English', file: 'en.json' }
+    ],
+    lazy: true,
+    langDir: 'lib/locales/',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    }
+  },
+  css: ['@/assets/css/tailwind.css', '@/assets/css/index.css'],
   compatibilityDate: '2024-08-10'
 })

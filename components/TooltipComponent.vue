@@ -1,6 +1,6 @@
 <template>
   <span
-    class="relative before:content-[''] before:z-[1001] before:border-[5px] before:border-solid before:border-transparent after:content-[attr(tooltipText)] after:text-center after:whitespace-nowrap after:min-w-[3em] after:max-w-xs after:overflow-hidden after:text-ellipsis after:shadow-sm after:opacity-30 after:text-white after:z-[1000] after:p-2 after:rounded-md"
+    class="relative before:content-[''] before:z-[1001] before:border-[5px] before:border-solid before:border-transparent after:content-[attr(tooltipText)] after:text-center after:whitespace-nowrap after:min-w-[3em] after:max-w-xs after:overflow-hidden after:text-ellipsis after:shadow-sm after:opacity-30 after:text-black after:dark:text-white after:z-[1000] after:p-2 after:rounded-md content-center after:dark:bg-zinc-900 after:border after:dark:border-white after:bg-zinc-100 after:border-black"
     :tooltipText="tooltipText"
     :position="position ?? 'top'"
     role="tooltip"
@@ -19,26 +19,20 @@ defineProps<{ tooltipText: string, position?: string }>()
 <style scoped>
   span {
     & > * {
-      @apply inline-block;
+      @apply inline-flex items-center h-full;
     }
 
     &::before,
     &::after {
-      @apply text-[0.9em] leading-none select-none pointer-events-none absolute hidden opacity-0;
+      @apply text-sm leading-none select-none pointer-events-none absolute hidden opacity-0 transition-opacity duration-200 ease-out;
     }
-    &::after {
-      @apply bg-black;
-    }
+
     &:hover::before,
     &:hover::after {
-      @apply block;
+      @apply block opacity-90;
     }
 
     /* Position: TOP */
-    &:not([position])::before,
-    &[position^="top"]::before {
-      @apply border-t-black border-b-0 bottom-full;
-    }
     &:not([position])::after,
     &[position^="top"]::after {
       @apply bottom-[calc(100%_+_5px)];
@@ -51,11 +45,8 @@ defineProps<{ tooltipText: string, position?: string }>()
     }
 
     /* Position: BOTTOM */
-    &[position^="bottom"]::before {
-      @apply border-t-0 border-b-black top-[105%];
-    }
     &[position^="bottom"]::after {
-      @apply top-[calc(105%_+_5px)];
+      @apply top-[calc(100%_+_5px)];
     }
     &[position^="bottom"]::before,
     &[position^="bottom"]::after {
@@ -63,17 +54,11 @@ defineProps<{ tooltipText: string, position?: string }>()
     }
 
     /* Position: LEFT */
-    &[position^="left"]::before {
-      @apply left-[calc(0em_-_5px)] translate-x-[-0.5em] -translate-y-2/4 border-l-black border-r-0 top-2/4;
-    }
     &[position^="left"]::after {
       @apply translate-x-[-0.5em] -translate-y-2/4 right-[calc(100%_+_5px)] top-2/4;
     }
 
     /* Position: RIGHT */
-    &[position^="right"]::before {
-      @apply right-[calc(0em_-_5px)] translate-x-[0.5em] -translate-y-2/4 border-l-0 border-r-black top-2/4;
-    }
     &[position^="right"]::after {
       @apply translate-x-[0.5em] -translate-y-2/4 left-[calc(100%_+_5px)] top-2/4;
     }

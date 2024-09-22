@@ -1,6 +1,6 @@
 <template>
   <div v-if="!isClosed" class="flex flex-col w-full h-full overflow-hidden rounded-lg" role="region" aria-label="Terminal component">
-    <div class="flex items-center w-full p-3 shadow-xl bg-primary-light dark:bg-primary-dark">
+    <div class="flex items-center w-full p-3 shadow-xl bg-gray-100 dark:bg-primary-dark">
       <div class="inline-flex gap-2">
         <div
           class="w-2.5 h-2.5 rounded-[50%] bg-[#ff5f57]"

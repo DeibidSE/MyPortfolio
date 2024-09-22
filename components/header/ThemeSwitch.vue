@@ -1,7 +1,10 @@
 <template>
-  <div class="flex items-center cursor-pointer" @click="setTheme">
-    <nuxt-icon v-if="themeStore.isLightMode" name="sun" class="text-2xl hover:text-yellow-500" />
-    <nuxt-icon v-else name="moon" class="text-2xl hover:text-purple-500" />
+  <div
+    class="flex items-center justify-center p-2 transition-colors duration-300 rounded-full cursor-pointer hover:text-yellow-500 dark:hover:text-purple-600"
+    @click="setTheme"
+  >
+    <nuxt-icon v-if="themeStore.isLightMode" name="sun" class="text-2xl" />
+    <nuxt-icon v-else name="moon" class="text-2xl" />
   </div>
 </template>
 

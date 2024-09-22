@@ -1,26 +1,39 @@
 <template>
   <aside
-    class="fixed left-0 z-40 w-full h-full transition-transform duration-500 transform shadow-lg bg-secondary-light dark:bg-secondary-dark"
-    :class="{ 'translate-x-0': menuOpen, '-translate-x-full': !menuOpen }"
+    class="fixed inset-0 z-50 w-64 h-full max-w-full pt-20 transition-transform duration-500 ease-in-out transform shadow-2xl bg-secondary-light dark:bg-secondary-dark lg:w-80"
     aria-label="Navigation menu"
   >
-    <ul class="flex flex-col justify-center flex-1 h-full gap-8 p-16">
-      <li v-for="(section, key) in sectionList" :key="key">
-        <span
-          class="text-2xl capitalize opacity-100 cursor-pointer md:text-4xl hover:text-purple-500"
-          @click.stop="scrollToSection(section)"
+    <div class="relative flex flex-col justify-between h-full p-6">
+      <!-- Navigation Menu -->
+      <ul class="flex flex-col gap-6 mt-8">
+        <li
+          v-for="(section, key) in sectionList"
+          :key="key"
+          class="w-full px-6 py-4 transition-transform duration-300 ease-in-out rounded-lg cursor-pointer group hover:translate-x-2 hover:bg-gray-100 hover:dark:bg-primary-dark"
         >
-          {{ section || '' }}
-        </span>
-      </li>
-    </ul>
+          <span
+            class="block text-2xl font-semibold tracking-wide transition-all text-primary-dark dark:text-primary-light md:text-3xl lg:text-4xl group-hover:text-accent-light dark:group-hover:text-accent-dark"
+            @click.stop="scrollToSection(key)"
+          >
+            {{ section }}
+          </span>
+        </li>
+      </ul>
+    </div>
   </aside>
 </template>
 
 <script setup lang="ts">
-defineProps<{ menuOpen: Boolean, sectionList: string[] }>()
 
 const emit = defineEmits(['menu-close'])
+
+const { t } = useI18n()
+const sectionList = computed(() => ({
+  aboutMe: t('aboutMe'),
+  projects: t('projects'),
+  workExperience: t('workExperience'),
+  skills: t('skills')
+}))
 
 const closeMenuDropdown = () => emit('menu-close')
 

@@ -1,76 +1,42 @@
 <template>
-  <div ref="dropdown" class="relative" role="button" aria-label="Select language">
-    <div class="flex items-center rounded-full cursor-pointer hover:text-purple-500">
-      <nuxt-icon name="language" class="text-xl" alt="Language selector icon" />
-      <nuxt-icon name="angle-down" class="text-xl" alt="Down arrow icon" />
-    </div>
-    <transition name="dropdown-content">
-      <label
-        v-if="showDropdown"
-        for="languageSelector"
-        class="absolute right-0 inline-flex items-center p-1 mt-3 origin-top-right border rounded-md cursor-pointer dark:border-light border-dark bg-secondary-light dark:bg-secondary-dark"
+  <div ref="dropdown" class="relative flex items-center justify-center">
+    <select
+      v-model="languageStore.language"
+      class="w-full h-10 pl-4 pr-10 transition-all duration-300 ease-in-out bg-transparent rounded-full appearance-none cursor-pointer text-md text-dark dark:text-light focus:outline-none"
+      aria-label="Select language"
+    >
+      <option
+        v-for="(language, code) in languages"
+        :key="code"
+        :value="code"
+        class="bg-secondary-light dark:bg-secondary-dark text-dark dark:text-light"
       >
-        <input id="languageSelector" type="checkbox" class="hidden peer">
-        <span
-          v-for="lang in languages"
-          :key="lang.value"
-          class="px-4 py-2 uppercase"
-          :class="{
-            'bg-purple-500': lang.value === languageStore.language,
-            'hover:bg-purple-500/50': lang.value !== languageStore.language
-          }"
-          @click="selectLang(lang)"
-        >
-          {{ lang.value }}
-        </span>
-      </label>
-    </transition>
+        {{ language }}
+      </option>
+    </select>
+
+    <nuxt-icon
+      name="angle-down"
+      class="absolute text-xl pointer-events-none text-dark right-4 dark:text-light"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { type Language } from '~/lib/types.d'
-
-const showDropdown = ref(false)
-const dropdown = ref<HTMLElement | null>(null)
-
-const languages: Language[] = [
-  { value: 'es' },
-  { value: 'en' }
-]
-
+const { locale } = useI18n()
 const languageStore = langStore()
 
-const selectLang = (lang: Language) => {
-  languageStore.setLanguage(lang.value)
-  showDropdown.value = false
+const languages: Record<string, string> = {
+  es: 'Español',
+  en: 'English'
 }
 
-const handleClickOutside = (event: MouseEvent) => {
-  if (dropdown.value && !dropdown.value.contains(event.target as Node)) {
-    showDropdown.value = false
-  } else {
-    showDropdown.value = !showDropdown.value
-  }
-}
-
-onMounted(() => {
-  document.addEventListener('click', handleClickOutside)
+watch(() => languageStore.language, (newLocale) => {
+  locale.value = newLocale
 })
 
-onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside)
-})
+// Initialize locale from the store
+locale.value = languageStore.language
+
+const dropdown = ref<HTMLElement | null>(null)
 </script>
-
-<style scoped>
-  .dropdown-content-enter-active,
-  .dropdown-content-leave-active {
-    transition: opacity 0.2s, transform 0.2s;
-  }
-  .dropdown-content-enter,
-  .dropdown-content-leave-to {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-</style>

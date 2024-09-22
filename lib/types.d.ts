@@ -1,51 +1,3 @@
-export interface LanguageData {
-  [locale: string]: {
-    [section: string]: any
-  }
-}
-
-export interface Language {
-  value: string
-}
-
-/* -------------------------------------------------------- */
-
-export interface PersonalIntroduction {
-  whoAmI: string
-  job: string
-  scrollDown: string
-}
-
-/* -------------------------------------------------------- */
-
-export interface PresentationInfo {
-  command: string
-  title: string
-  availability: string
-  content: string[]
-  profileCard: UserProfileCard
-  cv: Curriculum
-}
-
-export interface UserProfileCard {
-  imagePath: string
-  socialLinks: SocialLink[]
-}
-
-export interface SocialLink {
-  name: string
-  icon: string
-  url: string
-}
-
-export interface Curriculum {
-  label: string
-  message: string
-  closeMsg: string
-}
-
-/* -------------------------------------------------------- */
-
 export interface Project {
   text?: string
   image?: string
@@ -59,9 +11,7 @@ export interface Technology {
   url: string
 }
 
-/* -------------------------------------------------------- */
-
-export interface JobOrStudy {
+export interface WorkExperience {
   title: string
   startDate: string
   endDate: string
@@ -71,22 +21,8 @@ export interface JobOrStudy {
   website?: string
 }
 
-/* -------------------------------------------------------- */
-
 export interface Skill {
   name: string
   image: string
   progress: number
-}
-
-/* -------------------------------------------------------- */
-
-export interface Alert {
-  message: string
-  link?: AlertLink
-}
-
-export interface AlertLink {
-  label: string
-  url: string
 }

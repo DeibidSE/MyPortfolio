@@ -1,58 +1,48 @@
 <template>
-  <section
-    :id="id"
-    class="min-h-dvh bg-primary-light dark:bg-primary-dark"
-    :aria-label="id"
-  >
-    <div class="flex flex-col items-center justify-center w-full max-w-screen-lg mx-auto h-dvh">
-      <div class="flex items-end justify-center w-full h-full p-5 overflow-hidden sm:p-6">
-        <h1 class="w-full text-4xl font-bold text-center sm:text-5xl md:text-7xl">
-          {{ data.whoAmI || '' }}
+  <NuxtLayout id="introduction">
+    <div class="flex flex-col items-center justify-center w-full gap-6 mx-auto h-dvh">
+      <div class="flex items-end justify-center w-full h-full overflow-hidden">
+        <h1 class="w-full p-6 text-6xl font-bold text-center text-transparent sm:text-7xl md:text-8xl lg:text-9xl bg-clip-text bg-gradient-to-r from-accent to-accent-secondary">
+          {{ $t('whoAmI') }}
         </h1>
       </div>
-      <div class="flex items-start justify-center w-full h-full p-5 overflow-hidden sm:p-6">
-        <h2 ref="typingtext" class="inline-block text-2xl font-bold text-center text-purple-500 cursor-default sm:text-4xl md:text-5xl animate-blinking-caret">
-          {{ txt || '' }}
+      <div class="flex items-start justify-center w-full h-full overflow-hidden">
+        <h2 ref="typingtext" class="inline-block text-2xl font-bold text-center text-purple-600 cursor-default text-nowrap sm:text-4xl md:text-5xl xl:text-6xl animate-blinking-caret">
+          {{ txt }}
         </h2>
       </div>
     </div>
     <div class="absolute bottom-0 w-full py-4 text-center">
       <div class="flex flex-col animate-bounce text-dark dark:text-light">
-        <span class="w-full text-xs sm:text-sm">{{ data.scrollDown || '' }}</span>
+        <span class="w-full text-xs sm:text-sm">{{ $t('scrollDownHelpMsg') }}</span>
         <nuxt-icon
           name="angle-double-down"
-          class="self-center text-4xl cursor-pointer hover:text-purple-500"
+          class="self-center text-4xl cursor-pointer hover:text-purple-600"
           role="button"
           aria-label="Scroll down"
           @click="scrollDown"
         />
       </div>
     </div>
-  </section>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-import { type PersonalIntroduction } from '~/lib/types.d'
-
-const props = defineProps<{ sectionData: { [title: string]: PersonalIntroduction } }>()
-
 const txt = ref('')
 const isDeleting = ref(false)
 const loopNum = ref(0)
-const typingtextElement = ref<HTMLElement | null>(null)
+const typingtextElement = ref()
 
-const title = computed<string>(() => Object.keys(props.sectionData).toString() || '')
-const id = computed<string>(() => title.value.toLowerCase().replace(/\s+/g, '-'))
-const data = computed<PersonalIntroduction>(() => props.sectionData[title.value] || {})
+const { t } = useI18n()
 
 onMounted(() => {
-  typingtextElement.value = typingtextElement as unknown as HTMLElement
+  typingtextElement.value = typingtextElement
   tick()
 })
 
 const tick = () => {
   const htmlElement = typingtextElement.value
-  const fullTxt = data.value.job || ''
+  const fullTxt = t('fullJobTitle')
 
   if (htmlElement && fullTxt.length > 0) {
     if (isDeleting.value) {
