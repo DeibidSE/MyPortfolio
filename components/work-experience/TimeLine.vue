@@ -1,5 +1,5 @@
 <template>
-  <ol class="relative border-l-4 border-dark dark:border-light" role="list">
+  <ol class="relative self-start border-l-4 border-dark dark:border-light" role="list">
     <li v-for="(info, index) in workExperience" :key="index" class="mb-10 ml-4" role="listitem">
       <div class="absolute w-3 h-3 bg-purple-600 rounded-full mt-1.5 -left-2 border-2 border-dark dark:border-white" />
       <time class="mb-1 font-normal leading-none text-purple-400 text-md">{{ $rt(info.startDate) }} - {{ $rt(info.endDate) }}</time>

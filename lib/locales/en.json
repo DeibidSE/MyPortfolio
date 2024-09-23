@@ -1,24 +1,23 @@
 {
-  "introduction": "Introduction",
-  "aboutMe": "About me",
-  "projects": "Projects",
-  "workExperience": "Work Experience",
+  "introduction": "Welcome",
+  "aboutMe": "About Me",
+  "projects": "My Projects",
+  "workExperience": "Professional Experience",
   "skills": "Skills",
-  "whoAmI": "Hi there! I'm David",
+  "whoAmI": "Hi! I'm David",
   "fullJobTitle": "Full Stack Web Developer",
   "scrollDownHelpMsg": "Scroll down to see more",
-  "command": "./about_me.sh",
-  "availability": "Currently Employed",
+  "availability": "Currently employed",
   "terminalContent": [
-    "🧑🏻‍💻 My name is David and I work as a Full Stack Web Developer with over 3 years of experience.",
+    "🧑🏻‍💻 My name is David and I have been working as a Full Stack Web Developer for more than 3 years.",
     "🚀 I started programming after finishing high school, as I always knew this field was for me. Since then, I have been immersed in a constant process of learning and improvement, which has led me to face new challenges every day that have shaped the professional I consider myself to be today.",
     "🔝 Although a large part of my time is dedicated to my daily work, I always find space to create something new in my free time. I am very proud of what I have achieved so far, but what really excites me are the opportunities that the future holds. I am eager to expand this portfolio with more projects and successes!",
     "😀 Thank you very much for visiting my website and for being part of my journey of growth and professional development!"
   ],
-  "cvLabel": "Get my Curriculum Vitae",
-  "cvMessage": "Thank you for your interest in my CV! Please feel free to contact me for an updated copy.",
-  "cvCloseMsg": "(Click anywhere to close me)",
-  "code": "See the code on GitHub",
+  "cvLabel": "Download my Curriculum Vitae",
+  "cvMessage": "Thank you for your interest in my CV! Feel free to contact me for an updated copy.",
+  "cvCloseMsg": "(Click anywhere to close)",
+  "code": "View the code on GitHub",
   "projectsList": {
     "My daily Job": {
       "image": "images/verify.webp",
@@ -125,113 +124,6 @@
       "location": "Remote",
       "description": "My first contact with the working world, here I completed the 3-month internship required by the superior degree. Unfortunately, due to the COVID-19 pandemic, these internships had to be done 100% remotely.",
       "website": "http://www.dominama.es/"
-    }
-  ],
-  "skillsList": [
-    {
-      "name": "Vue.js",
-      "image": "logos/Vue",
-      "progress": 80
-    },
-    {
-      "name": "Nuxt",
-      "image": "logos/Nuxt",
-      "progress": 75
-    },
-    {
-      "name": "TypeScript",
-      "image": "logos/TypeScript",
-      "progress": 80
-    },
-    {
-      "name": "JavaScript",
-      "image": "logos/JavaScript",
-      "progress": 80
-    },
-    {
-      "name": "HTML 5",
-      "image": "logos/HTML",
-      "progress": 95
-    },
-    {
-      "name": "CSS",
-      "image": "logos/CSS",
-      "progress": 70
-    },
-    {
-      "name": "Sass",
-      "image": "logos/Sass",
-      "progress": 70
-    },
-    {
-      "name": "Tailwind CSS",
-      "image": "logos/Tailwind CSS",
-      "progress": 90
-    },
-    {
-      "name": "Laravel",
-      "image": "logos/Laravel",
-      "progress": 85
-    },
-    {
-      "name": "PHP",
-      "image": "logos/PHP",
-      "progress": 85
-    },
-    {
-      "name": "MySQL",
-      "image": "logos/MySQL",
-      "progress": 80
-    },
-    {
-      "name": "PostgreSQL",
-      "image": "logos/PostgreSQL",
-      "progress": 70
-    },
-    {
-      "name": "Node.js",
-      "image": "logos/Node.js",
-      "progress": 40
-    },
-    {
-      "name": "Express",
-      "image": "logos/Express",
-      "progress": 40
-    },
-    {
-      "name": "Java",
-      "image": "logos/Java",
-      "progress": 35
-    },
-    {
-      "name": "Python",
-      "image": "logos/Python",
-      "progress": 20
-    },
-    {
-      "name": "Visual Studio Code",
-      "image": "logos/VS Code",
-      "progress": 100
-    },
-    {
-      "name": "Docker",
-      "image": "logos/Docker",
-      "progress": 80
-    },
-    {
-      "name": "Vagrant",
-      "image": "logos/Vagrant",
-      "progress": 90
-    },
-    {
-      "name": "Laragon",
-      "image": "logos/Laragon",
-      "progress": 95
-    },
-    {
-      "name": "Android Studio",
-      "image": "logos/Android Studio",
-      "progress": 35
     }
   ],
   "backToTop": "Back to Top"

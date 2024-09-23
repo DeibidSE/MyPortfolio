@@ -18,17 +18,17 @@
 </template>
 
 <style scoped>
-#card_1 {
-  --index: 1;
-}
-#card_2 {
-  --index: 2;
-}
-#card_3 {
-  --index: 3;
-}
-
 @supports (animation-timeline: view()) {
+  #card_1 {
+    --index: 1;
+  }
+  #card_2 {
+    --index: 2;
+  }
+  #card_3 {
+    --index: 3;
+  }
+
   .card {
     --index0: calc(var(--index) - 1);
     --reverse-index: calc(var(--numcards) - var(--index0));

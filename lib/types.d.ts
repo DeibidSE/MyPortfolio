@@ -20,9 +20,3 @@ export interface WorkExperience {
   details?: string[],
   website?: string
 }
-
-export interface Skill {
-  name: string
-  image: string
-  progress: number
-}

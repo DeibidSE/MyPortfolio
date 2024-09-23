@@ -83,9 +83,9 @@ const isMenuOpen = ref(false)
 
 // Sections for the navbar
 const sectionList = computed(() => ({
-  aboutMe: t('aboutMe'),
+  'about-me': t('aboutMe'),
   projects: t('projects'),
-  workExperience: t('workExperience'),
+  'work-experience': t('workExperience'),
   skills: t('skills')
 }))
 
@@ -110,7 +110,7 @@ const scrollToSection = (section: string) => {
 </script>
 
 <style scoped>
-@supports (animation-timeline: view()) {
+@supports (animation-timeline: scroll()) {
   @keyframes grow {
     from {
       transform: scaleX(0);
@@ -122,7 +122,7 @@ const scrollToSection = (section: string) => {
 
   .scroll-progress-bar {
     transform-origin: center;
-    animation: grow 5s linear both;
+    animation: grow auto linear;
     animation-timeline: scroll(root);
   }
 }

@@ -29,9 +29,9 @@ const emit = defineEmits(['menu-close'])
 
 const { t } = useI18n()
 const sectionList = computed(() => ({
-  aboutMe: t('aboutMe'),
+  'about-me': t('aboutMe'),
   projects: t('projects'),
-  workExperience: t('workExperience'),
+  'work-experience': t('workExperience'),
   skills: t('skills')
 }))
 

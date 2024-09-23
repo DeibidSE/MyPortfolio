@@ -2,7 +2,7 @@
   <div class="flex flex-col gap-6 font-terminal">
     <div class="flex items-start gap-2">
       <span class="font-semibold tracking-wider dark:text-lime-600 text-lime-800">user@localhost:~$</span>
-      <span class="text-dark dark:text-light">{{ $t('command') }}</span>
+      <span class="text-dark dark:text-light">./about_me.sh</span>
     </div>
     <div class="flex flex-col gap-4 xl:grid xl:grid-cols-3">
       <div class="flex flex-col h-full gap-4 lg:col-span-2">

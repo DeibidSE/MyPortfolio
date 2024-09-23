@@ -306,3 +306,10 @@
 - Revamped the entire portfolio for a modern, clean, and user-friendly interface, prioritizing aesthetics and functionality.
 - Implemented multilanguage support with i18n.
 - Updated dependencies to the latest versions.
+
+## [v2.0.1] - 23/09/2024
+
+### Changes
+
+- Various bug fixes.
+- Update some texts
