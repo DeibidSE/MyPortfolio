@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   eslint: { lintOnStart: false },
   ssr: false,
   app: {
-    baseURL: '/MyPortfolio/',
+    baseURL: '/portfolio/',
     head: {
       title: 'Portfolio - David Simón',
       meta: [
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/MyPortfolio/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/portfolio/favicon.ico' }
       ],
       htmlAttrs: {
         lang: 'es'
@@ -36,7 +36,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      BASE_URL: '/MyPortfolio'
+      BASE_URL: '/portfolio'
     }
   },
   modules: [
